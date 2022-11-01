@@ -1,19 +1,34 @@
 const toHumanreadableTimestamp = require("./timestamp");
 
 describe('Input validation', function() {
-  it("when called with null, it returns null", () => {
+  it("null", () => {
     let result = toHumanreadableTimestamp(null);
     expect(result).toBe(null);
   });
 
-  it("when called with non integer, it throws exception", () => {
+  it("non integer", () => {
     expect(() => toHumanreadableTimestamp("random string")).toThrow("random string is not a number");
   });
 });
 
 describe('Conversion', function() {
-  it("0 returns 0d 0h 0m 0s", () => {
-    let result = toHumanreadableTimestamp(0);
-    expect(result).toBe("0d 0h 0m 0s");
+  it("0 ms", () => {
+    expect(toHumanreadableTimestamp(0)).toBe("0d 0h 0m 0s");
+  });
+
+  it("one second", () => {
+    expect(toHumanreadableTimestamp(100)).toBe("0d 0h 0m 1s");
+  });
+
+  it("one minute", () => {
+    expect(toHumanreadableTimestamp(60000)).toBe("0d 0h 1m 0s");
+  });
+
+  it("one hour", () => {
+    expect(toHumanreadableTimestamp(3600000)).toBe("0d 1h 0m 0s");
+  });
+
+  it("one day", () => {
+    expect(toHumanreadableTimestamp(86400000)).toBe("1d 0h 0m 0s");
   });
 });
