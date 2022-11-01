@@ -6,6 +6,11 @@ describe('Input validation', function() {
     expect(result).toBe(null);
   });
 
+  it("undefined", () => {
+    let result = toHumanreadableTimestamp(undefined);
+    expect(result).toBe(null);
+  });
+
   it("non integer", () => {
     expect(() => toHumanreadableTimestamp("random string")).toThrow("random string is not a number");
   });

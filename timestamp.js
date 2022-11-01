@@ -1,5 +1,5 @@
 function toHumanreadableTimestamp(ms) {
-  if(ms===null)
+  if(ms===null || ms == undefined)
   {
     return null;
   }
@@ -10,6 +10,7 @@ function toHumanreadableTimestamp(ms) {
   {
     throw `${ms} is not a number`;
   }
+
 
   if (ms === 0) {
     return "0d 0h 0m 0s";
