@@ -17,23 +17,33 @@ describe("Input validation", function () {
 });
 
 describe("Conversion", function () {
-  it("0 ms", () => {
-    expect(toHumanreadableTimestamp(0)).toBe("0d 0h 0m 0s");
+  it("tests function for input equal to 0", () => {
+    const value = 0;
+    const expectedResult = "0d 0h 0m 0s";
+    expect(toHumanreadableTimestamp(value)).toBe(expectedResult);
   });
 
-  it("one second", () => {
-    expect(toHumanreadableTimestamp(100)).toBe("0d 0h 0m 1s");
+  it("tests function for input equal to one second", () => {
+    const value = 1000;
+    const expectedResult = "0d 0h 0m 1s";
+    expect(toHumanreadableTimestamp(value)).toBe(expectedResult);
   });
 
-  it("one minute", () => {
-    expect(toHumanreadableTimestamp(60000)).toBe("0d 0h 1m 0s");
+  it("tests function for input equal to one minute", () => {
+    const value = 60000;
+    const expectedResult = "0d 0h 1m 0s";
+    expect(toHumanreadableTimestamp(value)).toBe(expectedResult);
   });
 
-  it("one hour", () => {
-    expect(toHumanreadableTimestamp(3600000)).toBe("0d 1h 0m 0s");
+  it("tests function for input equal to one hour", () => {
+    const value = 3600000;
+    const expectedResult = "0d 1h 0m 0s";
+    expect(toHumanreadableTimestamp(value)).toBe(expectedResult);
   });
 
-  it("one day", () => {
-    expect(toHumanreadableTimestamp(86400000)).toBe("1d 0h 0m 0s");
+  it("tests function for input equal to one day", () => {
+    const value = 86400000;
+    const expectedResult = "1d 0h 0m 0s";
+    expect(toHumanreadableTimestamp(value)).toBe(expectedResult);
   });
 });
