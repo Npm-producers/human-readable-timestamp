@@ -1,22 +1,22 @@
 const toHumanreadableTimestamp = require("./timestamp");
 
-describe('Input validation', function() {
-  it("null", () => {
+describe("Input validation", function () {
+  it("returns null when called with null", () => {
     let result = toHumanreadableTimestamp(null);
     expect(result).toBe(null);
   });
 
-  it("undefined", () => {
+  it("returns null when called with undefined", () => {
     let result = toHumanreadableTimestamp(undefined);
     expect(result).toBe(null);
   });
 
-  it("non integer", () => {
-    expect(() => toHumanreadableTimestamp("random string")).toThrow("random string is not a number");
+  it("throws an error when called with non integer", () => {
+    expect(() => toHumanreadableTimestamp(NaN)).toThrow();
   });
 });
 
-describe('Conversion', function() {
+describe("Conversion", function () {
   it("0 ms", () => {
     expect(toHumanreadableTimestamp(0)).toBe("0d 0h 0m 0s");
   });
