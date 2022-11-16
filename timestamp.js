@@ -1,7 +1,6 @@
 function toHumanreadableTimestamp(ms) {
 
-  if(ms===null || ms == undefined)
-  {
+  if (ms === null || ms == undefined) {
 
     return null;
   }
@@ -12,26 +11,21 @@ function toHumanreadableTimestamp(ms) {
     throw `${ms} is not a number`;
   }
 
+  let days = Math.floor(intValue / msInADay);
+  let remainingMs = intValue - (msInADay * days);
 
-  if (ms === 0) {
-    return "0d 0h 0m 0s";
-  }
+  let hours = Math.floor(remainingMs / msInAnHour);
+  remainingMs = intValue - (msInADay * days) - (msInAnHour * hours);
 
-  if (ms >= 0 && ms <= 1000) {
-    return "0d 0h 0m 1s"
-  }
+  let minutes = Math.floor(remainingMs / msInAMinute);
+  remainingMs = intValue - (msInADay * days) - (msInAnHour * hours) - (msInAMinute * minutes);
+  let seconds = Math.floor(remainingMs / msInASecond);
 
-  if (ms == 60000) {
-    return "0d 0h 1m 0s"
-  }
-
-  if (ms == 3600000) {
-    return "0d 1h 0m 0s"
-  }
-
-  if (ms == 86400000) {
-    return "1d 0h 0m 0s"
-  }
-
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 module.exports = toHumanreadableTimestamp;
+
+let msInASecond = 1000;
+let msInAMinute = msInASecond * 60;
+let msInAnHour = msInAMinute * 60;
+let msInADay = msInAnHour * 24;
