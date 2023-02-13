@@ -2,13 +2,13 @@ export function toHumanreadableTimestamp(ms: string): string {
 
   if (ms === null || ms == undefined) {
 
-    return null;
+    throw `${ms} is not a number`;
   }
 
   let intValue: number = parseInt(ms);
 
   if (isNaN(intValue)) {
-    throw `${ms} is not a number`; // ts throw error
+    throw `${ms} is not a number`;
   }
 
   let days: number = Math.floor(intValue / msInADay);

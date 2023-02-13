@@ -1,14 +1,14 @@
-import { toHumanreadableTimestamp } from '../lib/timestamp'
+import { toHumanreadableTimestamp } from '../lib'
 
 describe('Input validation', function () {
   it("null", () => {
-    let result = toHumanreadableTimestamp(null as any);
-    expect(result).toBe(null);
+    expect(() => toHumanreadableTimestamp(null as any)).toThrow("null is not a number");
+
   });
 
   it("undefined", () => {
-    let result = toHumanreadableTimestamp(undefined as any);
-    expect(result).toBe(null);
+    expect(() => toHumanreadableTimestamp(undefined as any)).toThrow("undefined is not a number");
+
   });
 
   it("non integer", () => {
