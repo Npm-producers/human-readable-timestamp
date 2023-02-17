@@ -1,7 +1,7 @@
 {
-  "name": "temp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "human-readable-timestamp",
+  "version": "1.0.1",
+  "description": "converts ms to days, hours, minutes and seconds",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Npm-producers/temp.git"
+    "url": "git+https://github.com/Npm-producers/human-readable-timestamp.git"
   },
-  "author": "",
+  "author": "Npm-producers",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Npm-producers/temp/issues"
+    "url": "https://github.com/Npm-producers/human-readable-timestamp/issues"
   },
-  "homepage": "https://github.com/Npm-producers/temp#readme",
+  "homepage": "https://github.com/Npm-producers/human-readable-timestamp#readme",
   "devDependencies": {
     "@jest/globals": "^29.4.2",
     "@types/jest": "^29.4.0",
