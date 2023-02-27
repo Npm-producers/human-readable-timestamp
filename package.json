@@ -8,12 +8,8 @@
     "dist/"
   ],
   "scripts": {
-    "build": "npm run clean && tsc",
-    "clean": "rm -r ./dist",
-    "cover": "nyc npm run test",
-    "cover:check": "nyc --check-coverage npm run test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint --ext .ts --fix src/**/*.ts test/**/*.ts",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "test": "jest"
   },
   "repository": {
