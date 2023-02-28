@@ -1,6 +1,6 @@
 {
   "name": "human-readable-timestamp",
-  "version": "1.0.4",
+  "version": "1.0.1",
   "description": "converts ms to days, hours, minutes and seconds",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
